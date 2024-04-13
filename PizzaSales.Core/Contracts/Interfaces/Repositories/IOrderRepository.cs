@@ -12,6 +12,7 @@ namespace PizzaSales.Core.Contracts.Interfaces.Repositories
     {
         Task<IEnumerable<OrderVM>> GetOrders(CancellationToken cancellationToken = default);
         Task<OrderVM> GetOrder(int id, CancellationToken cancellationToken = default);
+        Task<IEnumerable<OrderVM>> GetOrders(DateTime from, DateTime to, CancellationToken cancellationToken = default);
         Task<bool> AddOrder(Order order, CancellationToken cancellationToken = default);
         Task<bool> AddOrder(IEnumerable<Order> orders, CancellationToken cancellationToken = default);
         Task<bool> AddOrderDetail(OrderDetail orderDetail, CancellationToken cancellationToken = default);
