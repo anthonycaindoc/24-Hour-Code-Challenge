@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using MediatR.Pipeline;
 using PizzaSales.Core.Contracts.Interfaces.Repositories;
 using PizzaSales.Core.ViewModels;
@@ -12,16 +13,17 @@ using System.Threading.Tasks;
 
 namespace PizzaSales.Core.Features.Orders.Queries.GetOrders
 {
-    public class GetOrdersQuery : IRequest<IEnumerable<OrderVM>>
+    public class GetOrdersQuery : IRequest<IEnumerable<GetOrdersVM>>
     {
 
     }
 
-    public class GetOrdersHandler(IOrderRepository _orderRepository) : IRequestHandler<GetOrdersQuery, IEnumerable<OrderVM>>
+    public class GetOrdersHandler(IMapper _mapper, IOrderRepository _orderRepository) : IRequestHandler<GetOrdersQuery, IEnumerable<GetOrdersVM>>
     {
-        public async Task<IEnumerable<OrderVM>> Handle(GetOrdersQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<GetOrdersVM>> Handle(GetOrdersQuery request, CancellationToken cancellationToken)
         {
-            return await _orderRepository.GetOrders();
+            var orders = await _orderRepository.GetOrders();
+            return _mapper.Map<IEnumerable<GetOrdersVM>>(orders);
         }
     }
 }

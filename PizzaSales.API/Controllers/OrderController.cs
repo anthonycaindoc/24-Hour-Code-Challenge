@@ -13,7 +13,7 @@ namespace PizzaSales.API.Controllers
     public class OrderController(IMediator _mediator) : ControllerBase
     {
         [HttpGet("~/api/orders")]
-        [ProducesResponseType(200, Type = typeof(IEnumerable<OrderVM>))]
+        [ProducesResponseType(200, Type = typeof(IEnumerable<GetOrdersVM>))]
         [ProducesResponseType(400, Type = typeof(ExceptionMiddlewareResponse))]
         public async Task<IActionResult> GetOrders()
         {
@@ -21,7 +21,7 @@ namespace PizzaSales.API.Controllers
         }
 
         [HttpGet("{id}")]
-        [ProducesResponseType(200, Type = typeof(OrderVM))]
+        [ProducesResponseType(200, Type = typeof(GetOrderByIDVM))]
         [ProducesResponseType(400, Type = typeof(ExceptionMiddlewareResponse))]
         public async Task<IActionResult> GetOrders([FromRoute] int id)
         {
