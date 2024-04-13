@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[orders]
+(
+	[id] INT NOT NULL PRIMARY KEY IDENTITY, 
+	[orderId] INT NOT NULL,
+    [orderDate] DATETIME NOT NULL DEFAULT GETDATE() 
+)

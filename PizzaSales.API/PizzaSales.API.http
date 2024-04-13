@@ -1,0 +1,38 @@
+
+@PizzaSales.API_HostAddress = https://localhost:7223
+
+POST {{PizzaSales.API_HostAddress}}/api/auth/login
+Content-Type: application/json
+Authorization: Basic RWhybGljaDpAM3JoTCFjaDIwMjQ=
+
+###
+
+GET {{PizzaSales.API_HostAddress}}/api/orders
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI3NDYyNzYwOS1EQ0IwLTRBNDMtOEY3Qy1FQjc2MjQ4OTVBQkYiLCJuYmYiOjE3MTA2ODcwMTgsImV4cCI6MTcxMDcxOTQxOCwiaWF0IjoxNzEwNjg3MDE4LCJpc3MiOiJhcGkubW9uZXltZS5waCIsImF1ZCI6IioubW9uZXltZS5waCJ9.gz6Be6HL1Bwr0CS1Qz_u2tK0bwVNB3_TS6beBbrML-k
+
+###
+
+GET {{PizzaSales.API_HostAddress}}/api/order/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJFaHJsaWNoIiwibmJmIjoxNzEzMDE1ODMwLCJleHAiOjE3MTMwNDgyMzAsImlhdCI6MTcxMzAxNTgzMCwiaXNzIjoiYXBpLmVocmxpY2gucGgiLCJhdWQiOiIqLmVocmxpY2gucGgifQ.Ba0dGtzobfgGqkbGLOY2ws7UGdZFKLoxVx4F0s28dBY
+
+###
+
+GET {{PizzaSales.API_HostAddress}}/api/insights/sales/daily?from=2015-01-01&to=2015-12-31
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJFaHJsaWNoIiwibmJmIjoxNzEzMDE1ODMwLCJleHAiOjE3MTMwNDgyMzAsImlhdCI6MTcxMzAxNTgzMCwiaXNzIjoiYXBpLmVocmxpY2gucGgiLCJhdWQiOiIqLmVocmxpY2gucGgifQ.Ba0dGtzobfgGqkbGLOY2ws7UGdZFKLoxVx4F0s28dBY
+
+###
+
+GET {{PizzaSales.API_HostAddress}}/api/insights/sales/monthly?from=2015-01-01&to=2015-12-31
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJFaHJsaWNoIiwibmJmIjoxNzEzMDE1ODMwLCJleHAiOjE3MTMwNDgyMzAsImlhdCI6MTcxMzAxNTgzMCwiaXNzIjoiYXBpLmVocmxpY2gucGgiLCJhdWQiOiIqLmVocmxpY2gucGgifQ.Ba0dGtzobfgGqkbGLOY2ws7UGdZFKLoxVx4F0s28dBY
+
+###
+
+GET {{PizzaSales.API_HostAddress}}/api/insights/catalogue?from=2015-01-01&to=2015-12-31
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJFaHJsaWNoIiwibmJmIjoxNzEzMDE1ODMwLCJleHAiOjE3MTMwNDgyMzAsImlhdCI6MTcxMzAxNTgzMCwiaXNzIjoiYXBpLmVocmxpY2gucGgiLCJhdWQiOiIqLmVocmxpY2gucGgifQ.Ba0dGtzobfgGqkbGLOY2ws7UGdZFKLoxVx4F0s28dBY
+
+###
