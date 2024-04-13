@@ -2,6 +2,10 @@
 (
 	[orderDetailId] INT NOT NULL PRIMARY KEY IDENTITY, 
     [orderId] INT NULL, 
-    [pizzaId] INT NULL, 
+    [pizzaCode] INT NULL, 
     [quantity] INT NULL
 )
+
+GO
+
+CREATE INDEX [IX_orderDetails_Column] ON [dbo].[orderDetails] ([orderId], [pizzaCode])

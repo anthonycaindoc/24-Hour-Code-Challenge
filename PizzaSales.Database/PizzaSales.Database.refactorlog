@@ -35,4 +35,25 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="pizzaTypeId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="6014fb20-7a67-41a0-ab1a-57e961aa8d18" ChangeDateTime="04/13/2024 05:12:12">
+    <Property Name="ElementName" Value="[dbo].[orderDetails].[pizzaId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[orderDetails]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="pizzaTypeCode" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a31667c5-1642-455d-88dc-9589256ce40d" ChangeDateTime="04/13/2024 05:17:55">
+    <Property Name="ElementName" Value="[dbo].[orderDetails].[pizzaTypeCode]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[orderDetails]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="pizzaPriceCode" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8fb7977c-581b-4cbc-8f0c-1be2d27d0220" ChangeDateTime="04/13/2024 05:18:10">
+    <Property Name="ElementName" Value="[dbo].[orderDetails].[pizzaPriceCode]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[orderDetails]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="pizzaCode" />
+  </Operation>
 </Operations>

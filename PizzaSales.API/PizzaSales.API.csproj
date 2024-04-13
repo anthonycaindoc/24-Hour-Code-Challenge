@@ -19,13 +19,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\PizzaSales.Core\PizzaSales.Core.csproj" />
     <ProjectReference Include="..\PizzaSales.Domain\PizzaSales.Domain.csproj" />
     <ProjectReference Include="..\PizzaSales.Infrastructure\PizzaSales.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>
