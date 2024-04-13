@@ -12,12 +12,4 @@ namespace PizzaSales.Domain.Models.Orders
         public int OrderID { get; set; }
         public DateTime OrderDate { get; set; }
     }
-
-    public class OrderDetail
-    {
-        public int OrderDetailID { get; set; }
-        public int OrderID { get; set; }
-        public string PizzaCode { get; set; }
-        public DateTime Quantity { get; set; }
-    }
 }

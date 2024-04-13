@@ -14,4 +14,8 @@
     <NoWarn>1701;1702;8604;8603;8602;8601;8618</NoWarn>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="ValueObjects\" />
+  </ItemGroup>
+
 </Project>
