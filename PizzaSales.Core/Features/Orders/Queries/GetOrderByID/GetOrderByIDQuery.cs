@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using PizzaSales.Core.Contracts.Exceptions;
 using PizzaSales.Core.Contracts.Interfaces.Repositories;
 using PizzaSales.Core.ViewModels;
 
@@ -16,7 +17,7 @@ namespace PizzaSales.Core.Features.Orders.Queries.GetOrderByID
         {
             var order = await _orderRepository.GetOrder(request.OrderID, cancellationToken);
 
-            return _mapper.Map<GetOrderByIDVM>(order);
+            return order == null ? throw new ValidationException($"Order ${request.OrderID} does not exitst.") : _mapper.Map<GetOrderByIDVM>(order);
         }
     }
 }
