@@ -24,8 +24,4 @@
     <ProjectReference Include="..\PizzaSales.Infrastructure\PizzaSales.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>

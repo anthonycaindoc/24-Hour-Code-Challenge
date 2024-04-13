@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using PizzaSales.Domain.Models.Pizza;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace PizzaSales.Core.Profiles
     {
         public MappingProfile()
         {
-
+            
         }
     }
 }

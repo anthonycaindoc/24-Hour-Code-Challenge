@@ -1,9 +1,16 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using PizzaSales.Core.Contracts.Interfaces.Repositories;
 using PizzaSales.Infrastructure.Configurations;
+using PizzaSales.Infrastructure.Contexts;
+using PizzaSales.Infrastructure.Repositories;
+
+
+//using PizzaSales.Infrastructure.Repositories;
 using Serilog;
 using Serilog.Events;
 using Serilog.Sinks.MSSqlServer;
@@ -30,8 +37,10 @@ namespace PizzaSales.Infrastructure
             services.Configure<ConnectionStrings>(configuration.GetSection(nameof(ConnectionStrings)));
             #endregion
 
-            #region Repository Registration
+            #region Context/Repository Registration
+            services.AddDbContext<PizzaDbContext>(db => db.UseSqlServer(configuration.GetConnectionString("EHRLICH_DB")), ServiceLifetime.Transient);
 
+            services.AddTransient<IOrderRepository, OrderRepository>();
             #endregion
 
             #region Services Registration
