@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PizzaSales.API.Middlewares;
@@ -7,6 +8,7 @@ using PizzaSales.Core.Features.Pizzas.Commands.AddBatchPizzaType;
 
 namespace PizzaSales.API.Controllers
 {
+    [Authorize]
     [Route("api/pizza")]
     [ApiController]
     public class PizzaController(IMediator _mediator) : ControllerBase

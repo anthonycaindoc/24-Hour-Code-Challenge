@@ -31,7 +31,7 @@ namespace PizzaSales.API.Middlewares
                         httpStatusCode = HttpStatusCode.BadRequest;
                         result = JsonConvert.SerializeObject(new ExceptionMiddlewareResponse
                         {
-                            ErrorMessage = "PartnerId does not exists. Please contact the administrator.",
+                            ErrorMessage = "Client ID or Client Secret is not valid. Please contact the administrator.",
                         });
 
                         _logger.LogWarning(e, e.ToString());

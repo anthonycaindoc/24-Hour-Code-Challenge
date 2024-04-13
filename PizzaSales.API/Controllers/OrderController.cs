@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PizzaSales.API.Middlewares;
@@ -10,6 +11,7 @@ using PizzaSales.Core.ViewModels;
 
 namespace PizzaSales.API.Controllers
 {
+    [Authorize]
     [Route("api/order")]
     [ApiController]
     public class OrderController(IMediator _mediator) : ControllerBase

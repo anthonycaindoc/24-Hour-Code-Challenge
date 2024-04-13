@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "aed58275-3858-4682-8c2a-fd1a30ffb495",
+		"name": "Ehrlich Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9522047"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Get Access Token",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "@3rhL!ch2024",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "Ehrlich",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7223/api/auth/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7223",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Get Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7223/api/orders",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7223",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7223/api/order/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7223",
+							"path": [
+								"api",
+								"order",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Batch Orders",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "/C:/Users/antho/Downloads/pizza_place_sales_archive/orders.csv"
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7223/api/orders",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7223",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Batch Order Details",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "/C:/Users/antho/Downloads/pizza_place_sales_archive/order_details.csv"
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7223/api/order/details",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7223",
+							"path": [
+								"api",
+								"order",
+								"details"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pizzas",
+			"item": [
+				{
+					"name": "Add Batch Pizzas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "/C:/Users/antho/Downloads/pizza_place_sales_archive/pizzas.csv"
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7223/api/pizzas",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7223",
+							"path": [
+								"api",
+								"pizzas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Batch Pizza Types",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "/C:/Users/antho/Downloads/pizza_place_sales_archive/pizza_types.csv"
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7223/api/pizza/types",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7223",
+							"path": [
+								"api",
+								"pizza",
+								"types"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Insights",
+			"item": [
+				{
+					"name": "Get Monthly Sales Insights",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7223/api/insights/sales/monthly?from=2015-01-01&to=2015-12-31",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7223",
+							"path": [
+								"api",
+								"insights",
+								"sales",
+								"monthly"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "2015-01-01"
+								},
+								{
+									"key": "to",
+									"value": "2015-12-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Daily Sales Insights",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7223/api/insights/sales/daily?from=2015-01-01&to=2015-12-31",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7223",
+							"path": [
+								"api",
+								"insights",
+								"sales",
+								"daily"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "2015-01-01"
+								},
+								{
+									"key": "to",
+									"value": "2015-12-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Catalogue Insights",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7223/api/insights/catalogue?from=2015-01-01&to=2015-12-31",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7223",
+							"path": [
+								"api",
+								"insights",
+								"catalogue"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "2015-01-01"
+								},
+								{
+									"key": "to",
+									"value": "2015-12-31"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJFaHJsaWNoIiwibmJmIjoxNzEzMDE1MDI2LCJleHAiOjE3MTMwNDc0MjYsImlhdCI6MTcxMzAxNTAyNiwiaXNzIjoiYXBpLmVocmxpY2gucGgiLCJhdWQiOiIqLmVocmxpY2gucGgifQ.fJwIAaxyBxPMurmVyPX9owekb5Qr4xdgVjcsSnrxUiA",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

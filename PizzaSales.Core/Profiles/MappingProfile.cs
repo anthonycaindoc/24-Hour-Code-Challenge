@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using PizzaSales.Core.Features.Orders.Queries.GetOrderByID;
 using PizzaSales.Core.Features.Orders.Queries.GetOrders;
+using PizzaSales.Core.Features.Token.Queries.GetToken;
 using PizzaSales.Core.ViewModels;
+using PizzaSales.Domain.Entities.Identity;
 using PizzaSales.Domain.Models.Pizza;
 using System;
 using System.Collections.Generic;
@@ -15,6 +17,8 @@ namespace PizzaSales.Core.Profiles
     {
         public MappingProfile()
         {
+            CreateMap<Token, GetTokenVM>();
+
             CreateMap<OrderVM, GetOrdersVM>();
             CreateMap<OrderDetailsVM, GetOrderDetailsVM>();
             CreateMap<PizzaVM, GetOrderPizzaVM>()
