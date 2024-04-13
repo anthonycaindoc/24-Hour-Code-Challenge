@@ -9,6 +9,6 @@ namespace PizzaSales.Domain.Models.Pizza
         public string PizzaTypeCode { get; set; }
         public string Size { get; set; }
         public decimal Price { get; set; }
-        public DateTime DateUpdated { get; set; }
+        public DateTime DateUpdated { get; set; } = DateTime.Now;
     }
 }

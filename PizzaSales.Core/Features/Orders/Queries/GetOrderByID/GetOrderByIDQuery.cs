@@ -14,7 +14,7 @@ namespace PizzaSales.Core.Features.Orders.Queries.GetOrderByID
     {
         public async Task<GetOrderByIDVM> Handle(GetOrderByIDQuery request, CancellationToken cancellationToken)
         {
-            var order = await _orderRepository.GetOrder(request.OrderID);
+            var order = await _orderRepository.GetOrder(request.OrderID, cancellationToken);
 
             return _mapper.Map<GetOrderByIDVM>(order);
         }

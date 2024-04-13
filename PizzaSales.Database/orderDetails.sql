@@ -3,8 +3,7 @@
 	[orderDetailId] INT NOT NULL PRIMARY KEY IDENTITY, 
     [orderId] INT NULL, 
     [pizzaCode] VARCHAR(50) NULL, 
-    [quantity] INT NULL, 
-    CONSTRAINT [FK_orderDetails_ToTable] FOREIGN KEY ([orderId]) REFERENCES [orders]([orderId])
+    [quantity] INT NULL 
 )
 
 GO

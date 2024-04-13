@@ -5,8 +5,7 @@
     [name] VARCHAR(100) NULL, 
     [category] VARCHAR(20) NULL, 
     [ingredients] VARCHAR(500) NULL, 
-    [dateUpdated] DATETIME NULL DEFAULT GETDATE(), 
-    CONSTRAINT [AK_pizzaTypes_Column] UNIQUE ([code])
+    [dateUpdated] DATETIME NULL DEFAULT GETDATE() 
 )
 
 GO

@@ -22,7 +22,7 @@ namespace PizzaSales.Core.Features.Orders.Queries.GetOrders
     {
         public async Task<IEnumerable<GetOrdersVM>> Handle(GetOrdersQuery request, CancellationToken cancellationToken)
         {
-            var orders = await _orderRepository.GetOrders();
+            var orders = await _orderRepository.GetOrders(cancellationToken);
             return _mapper.Map<IEnumerable<GetOrdersVM>>(orders);
         }
     }

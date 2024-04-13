@@ -8,9 +8,6 @@ using PizzaSales.Core.Contracts.Interfaces.Repositories;
 using PizzaSales.Infrastructure.Configurations;
 using PizzaSales.Infrastructure.Contexts;
 using PizzaSales.Infrastructure.Repositories;
-
-
-//using PizzaSales.Infrastructure.Repositories;
 using Serilog;
 using Serilog.Events;
 using Serilog.Sinks.MSSqlServer;
@@ -41,6 +38,7 @@ namespace PizzaSales.Infrastructure
             services.AddDbContext<PizzaDbContext>(db => db.UseSqlServer(configuration.GetConnectionString("EHRLICH_DB")), ServiceLifetime.Transient);
 
             services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddTransient<IPizzaRepository, PizzaRepository>();
             #endregion
 
             #region Services Registration

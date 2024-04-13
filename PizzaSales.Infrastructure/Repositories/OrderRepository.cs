@@ -14,7 +14,7 @@ namespace PizzaSales.Infrastructure.Repositories
 {
     public class OrderRepository(PizzaDbContext _db) : IOrderRepository
     {
-        public async Task<IEnumerable<OrderVM>> GetOrders()
+        public async Task<IEnumerable<OrderVM>> GetOrders(CancellationToken cancellationToken = default)
         {
             var orders = _db.Orders
                 .Select(o => new OrderVM
@@ -37,10 +37,10 @@ namespace PizzaSales.Infrastructure.Repositories
                         .ToList()
                 });
 
-            return await orders.ToListAsync();
+            return await orders.ToListAsync(cancellationToken);
         }
 
-        public async Task<OrderVM> GetOrder(int id)
+        public async Task<OrderVM> GetOrder(int id, CancellationToken cancellationToken = default)
         {
             var orders = _db.Orders
                 .Where(m => m.OrderID == id)
@@ -64,7 +64,39 @@ namespace PizzaSales.Infrastructure.Repositories
                         .ToList()
                 });
 
-            return await orders.FirstOrDefaultAsync();
+            return await orders.FirstOrDefaultAsync(cancellationToken);
+        }
+
+        public async Task<bool> AddOrder(Order order, CancellationToken cancellationToken = default)
+        {
+            await _db.Orders.AddAsync(order, cancellationToken);
+            var result = await _db.SaveChangesAsync(cancellationToken);
+
+            return result > 0;
+        }
+
+        public async Task<bool> AddOrder(IEnumerable<Order> orders, CancellationToken cancellationToken)
+        {
+            await _db.Orders.AddRangeAsync(orders, cancellationToken);
+            var result = await _db.SaveChangesAsync(cancellationToken);
+
+            return result > 0;
+        }
+
+        public async Task<bool> AddOrderDetail(OrderDetail orderDetail, CancellationToken cancellationToken = default)
+        {
+            await _db.OrderDetails.AddAsync(orderDetail, cancellationToken);
+            var result = await _db.SaveChangesAsync(cancellationToken);
+
+            return result > 0;
+        }
+
+        public async Task<bool> AddOrderDetail(IEnumerable<OrderDetail> orderDetails, CancellationToken cancellationToken = default)
+        {
+            await _db.OrderDetails.AddRangeAsync(orderDetails, cancellationToken);
+            var result = await _db.SaveChangesAsync(cancellationToken);
+
+            return result > 0;
         }
     }
 }

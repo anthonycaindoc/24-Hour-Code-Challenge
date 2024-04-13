@@ -14,6 +14,6 @@ namespace PizzaSales.Domain.Models.Pizza
         public string Name { get; set; }
         public string Category { get; set; }
         public string Ingredients { get; set; }
-        public DateTime DateUpdated { get; set; }
+        public DateTime DateUpdated { get; set; } = DateTime.Now;
     }
 }

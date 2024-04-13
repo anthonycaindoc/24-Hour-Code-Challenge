@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <NoWarn>1701;1702;8604;8603;8602;8601;8618</NoWarn>
+    <NoWarn>1701;1702;8604;8603;8602;8601;8618;8600</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <NoWarn>1701;1702;8604;8603;8602;8601;8618</NoWarn>
+    <NoWarn>1701;1702;8604;8603;8602;8601;8618;8600</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,12 +19,6 @@
     <PackageReference Include="FluentValidation" Version="11.9.0" />
     <PackageReference Include="MediatR" Version="12.2.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Features\Orders\Commands\" />
-    <Folder Include="Features\Pizzas\Commands\" />
-    <Folder Include="Features\Pizzas\Queries\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -5,9 +5,7 @@
     [pizzaTypeCode] VARCHAR(50) NULL, 
     [size] VARCHAR(5) NULL, 
     [price] DECIMAL(18, 2) NULL, 
-    [dateUpdated] DATETIME NULL DEFAULT GETDATE(), 
-    CONSTRAINT [AK_pizzas_Column] UNIQUE ([code]), 
-    CONSTRAINT [FK_pizzas_pizzaTypes] FOREIGN KEY ([pizzaTypeCode]) REFERENCES [pizzaTypes]([code])
+    [dateUpdated] DATETIME NULL DEFAULT GETDATE() 
 )
 
 GO
