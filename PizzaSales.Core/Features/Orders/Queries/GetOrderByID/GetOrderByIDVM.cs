@@ -9,6 +9,7 @@ namespace PizzaSales.Core.Features.Orders.Queries.GetOrderByID
     public class GetOrderByIDVM
     {
         public int OrderID { get; set; }
+        public decimal OrderTotal { get; set; }
         public DateTime OrderDate { get; set; }
         public IEnumerable<GetOrderByIDOrderDetailsVM> OrderDetails { get; set; }
     }
@@ -17,6 +18,7 @@ namespace PizzaSales.Core.Features.Orders.Queries.GetOrderByID
     {
         public int OrderDetailID { get; set; }
         public int Quantity { get; set; }
+        public decimal SubTotal { get; set; }
         public GetOrderByIDPizzaVM Pizza { get; set; }
     }
 

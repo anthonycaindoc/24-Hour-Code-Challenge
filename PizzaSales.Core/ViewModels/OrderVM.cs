@@ -10,6 +10,13 @@ namespace PizzaSales.Core.ViewModels
     {
         public int OrderID { get; set; }
         public DateTime OrderDate { get; set; }
+        public decimal OrderTotal
+        {
+            get
+            {
+                return OrderDetails.Sum(m => m.SubTotal);
+            }
+        }
         public IEnumerable<OrderDetailsVM> OrderDetails { get; set; }
     }
 }

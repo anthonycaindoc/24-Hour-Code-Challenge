@@ -1,6 +1,10 @@
 
 @PizzaSales.API_HostAddress = https://localhost:7223
 
-GET {{PizzaSales.API_HostAddress}}/api/order
+GET {{PizzaSales.API_HostAddress}}/api/orders
+
+###
+
+GET {{PizzaSales.API_HostAddress}}/api/order/2
 
 ###
