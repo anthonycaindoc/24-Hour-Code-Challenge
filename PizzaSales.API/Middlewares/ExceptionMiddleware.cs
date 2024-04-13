@@ -43,7 +43,6 @@ namespace PizzaSales.API.Middlewares
                         result = JsonConvert.SerializeObject(new ExceptionMiddlewareResponse
                         {
                             ErrorMessage = e.ValidationErrors.FirstOrDefault(),
-                            ErrorPayload = JsonConvert.SerializeObject(e.ValidationErrors)
                         });
 
                         _logger.LogWarning(e, e.ToString());
@@ -71,6 +70,5 @@ namespace PizzaSales.API.Middlewares
     public class ExceptionMiddlewareResponse
     {
         public string ErrorMessage { get; set; } = string.Empty;
-        public string ErrorPayload { get; set; } = string.Empty;
     }
 }

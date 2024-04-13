@@ -17,7 +17,7 @@ namespace PizzaSales.Core.Features.Orders.Queries.GetOrderByID
         {
             var order = await _orderRepository.GetOrder(request.OrderID, cancellationToken);
 
-            return order == null ? throw new ValidationException($"Order ${request.OrderID} does not exitst.") : _mapper.Map<GetOrderByIDVM>(order);
+            return order == null ? throw new ValidationException($"Order {request.OrderID} does not exitst.") : _mapper.Map<GetOrderByIDVM>(order);
         }
     }
 }
