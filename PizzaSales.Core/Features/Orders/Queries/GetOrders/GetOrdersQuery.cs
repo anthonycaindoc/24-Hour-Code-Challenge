@@ -13,16 +13,17 @@ using System.Threading.Tasks;
 
 namespace PizzaSales.Core.Features.Orders.Queries.GetOrders
 {
-    public class GetOrdersQuery : IRequest<IEnumerable<GetOrdersVM>>
+    public class GetOrdersQuery(DateTime from, DateTime to) : IRequest<IEnumerable<GetOrdersVM>>
     {
-
+        public DateTime From { get; } = from;
+        public DateTime To { get; } = to;
     }
 
     public class GetOrdersHandler(IMapper _mapper, IOrderRepository _orderRepository) : IRequestHandler<GetOrdersQuery, IEnumerable<GetOrdersVM>>
     {
         public async Task<IEnumerable<GetOrdersVM>> Handle(GetOrdersQuery request, CancellationToken cancellationToken)
         {
-            var orders = await _orderRepository.GetOrders(cancellationToken);
+            var orders = await _orderRepository.GetOrders(request.From, request.To,cancellationToken);
             return _mapper.Map<IEnumerable<GetOrdersVM>>(orders);
         }
     }

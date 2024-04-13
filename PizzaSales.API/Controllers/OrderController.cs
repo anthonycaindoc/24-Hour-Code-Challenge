@@ -19,9 +19,9 @@ namespace PizzaSales.API.Controllers
         [HttpGet("~/api/orders")]
         [ProducesResponseType(200, Type = typeof(IEnumerable<GetOrdersVM>))]
         [ProducesResponseType(400, Type = typeof(ExceptionMiddlewareResponse))]
-        public async Task<IActionResult> GetOrders()
+        public async Task<IActionResult> GetOrders([FromQuery] DateTime from, [FromQuery] DateTime to)
         {
-            return Ok(await _mediator.Send(new GetOrdersQuery()));
+            return Ok(await _mediator.Send(new GetOrdersQuery(from, to)));
         }
 
         [HttpGet("{id}")]
