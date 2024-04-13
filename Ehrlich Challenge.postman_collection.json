@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "aed58275-3858-4682-8c2a-fd1a30ffb495",
+		"_postman_id": "806c45d5-648b-418c-8e32-643c9135bf85",
 		"name": "Ehrlich Challenge",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "9522047"
+		"_exporter_id": "34256490"
 	},
 	"item": [
 		{
@@ -56,7 +56,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:7223/api/orders",
+							"raw": "https://localhost:7223/api/orders?from=2015-01-01&to=2015-12-31",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -65,6 +65,16 @@
 							"path": [
 								"api",
 								"orders"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "2015-01-01"
+								},
+								{
+									"key": "to",
+									"value": "2015-12-31"
+								}
 							]
 						}
 					},
@@ -310,7 +320,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJFaHJsaWNoIiwibmJmIjoxNzEzMDE1MDI2LCJleHAiOjE3MTMwNDc0MjYsImlhdCI6MTcxMzAxNTAyNiwiaXNzIjoiYXBpLmVocmxpY2gucGgiLCJhdWQiOiIqLmVocmxpY2gucGgifQ.fJwIAaxyBxPMurmVyPX9owekb5Qr4xdgVjcsSnrxUiA",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJFaHJsaWNoIiwibmJmIjoxNzEzMDI1MDc3LCJleHAiOjE3MTMwNTc0NzcsImlhdCI6MTcxMzAyNTA3NywiaXNzIjoiYXBpLmVocmxpY2gucGgiLCJhdWQiOiIqLmVocmxpY2gucGgifQ.jfnlieVbTVJHFFhf4lfoGP8Us9_wJ0O6CC-wmqZC4A0",
 				"type": "string"
 			}
 		]

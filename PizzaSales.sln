@@ -11,11 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{0A
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PizzaSales.Database", "PizzaSales.Database\PizzaSales.Database.sqlproj", "{5A041FE0-46E0-4CF3-83C7-D0B9918E8084}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaSales.Core", "PizzaSales.Core\PizzaSales.Core.csproj", "{26225C61-4496-42A9-9BDC-F2966D7B14A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaSales.Core", "PizzaSales.Core\PizzaSales.Core.csproj", "{26225C61-4496-42A9-9BDC-F2966D7B14A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaSales.Infrastructure", "PizzaSales.Infrastructure\PizzaSales.Infrastructure.csproj", "{E5BFD6E7-D3B6-4F4B-96F6-DD50543697E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaSales.Infrastructure", "PizzaSales.Infrastructure\PizzaSales.Infrastructure.csproj", "{E5BFD6E7-D3B6-4F4B-96F6-DD50543697E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaSales.Domain", "PizzaSales.Domain\PizzaSales.Domain.csproj", "{79CE8D1C-ADCA-4775-A955-7F3221A877B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaSales.Domain", "PizzaSales.Domain\PizzaSales.Domain.csproj", "{79CE8D1C-ADCA-4775-A955-7F3221A877B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
